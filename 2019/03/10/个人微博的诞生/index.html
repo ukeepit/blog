@@ -1,218 +1,614 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<!-- Head tag -->
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
 
-  <!--Description-->
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="今天弄了好几个小时的hexo+github的个人博客，本来思路是很清楚的，就是首先配置需要的环境例如node.js，git….等等，然后再把他们按照规定的方式衔接起来。比如hexo与github的衔接，就是靠ssh的密匙。心里想着按着这个思路弄很快就能出成果。可谁知道还是踩了不少坑。  首先是hexo的安装配置流程不熟悉，相关命令后面的参数不清楚，导致浪费了很多时间。其次是在配置hexo的_c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人微博的诞生">
+<meta property="og:url" content="https://github.com/ukeepit/blog.git/2019/03/10/个人微博的诞生/index.html">
+<meta property="og:site_name" content="落后就要挨打">
+<meta property="og:description" content="今天弄了好几个小时的hexo+github的个人博客，本来思路是很清楚的，就是首先配置需要的环境例如node.js，git….等等，然后再把他们按照规定的方式衔接起来。比如hexo与github的衔接，就是靠ssh的密匙。心里想着按着这个思路弄很快就能出成果。可谁知道还是踩了不少坑。  首先是hexo的安装配置流程不熟悉，相关命令后面的参数不清楚，导致浪费了很多时间。其次是在配置hexo的_c">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-10T14:13:38.939Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="个人微博的诞生">
+<meta name="twitter:description" content="今天弄了好几个小时的hexo+github的个人博客，本来思路是很清楚的，就是首先配置需要的环境例如node.js，git….等等，然后再把他们按照规定的方式衔接起来。比如hexo与github的衔接，就是靠ssh的密匙。心里想着按着这个思路弄很快就能出成果。可谁知道还是踩了不少坑。  首先是hexo的安装配置流程不熟悉，相关命令后面的参数不清楚，导致浪费了很多时间。其次是在配置hexo的_c">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/ukeepit/blog.git/2019/03/10/个人微博的诞生/">
+
+
+
+
+
+  <title>个人微博的诞生 | 落后就要挨打</title>
   
 
-  <!--Author-->
-  
-  <meta name="author" content="X">
-  
-
-  <!--Open Graph Title-->
-  
-      <meta property="og:title" content="个人微博的诞生">
-  
-  <!--Open Graph Description-->
-  
-  <!--Open Graph Site Name-->
-  <meta property="og:site_name" content="落后就要挨打">
-  <!--Type page-->
-  
-      <meta property="og:type" content="article">
-  
-  <!--Page Cover-->
-  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <!-- Title -->
-  
-  <title>个人微博的诞生 - 落后就要挨打</title>
 
 
-  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
 
-  <!-- Custom CSS/Sass -->
-  <link rel="stylesheet" href="/blog/css/style.css">
 
-  <!----------------------------
-  https://github.com/GallenHu/hexo-theme-Daily
 
- _____            _   _
-|  __ \          (_) | |
-| |  | |   __ _   _  | |  _   _
-| |  | |  / _` | | | | | | | | |
-| |__| | | (_| | | | | | | |_| |
-|_____/   \__,_| |_| |_|  \__, |
-                          __/ |
-                         |___/
 
-    --------------------------->
 
 </head>
 
-
-<body>
-
-  <!-- Nav -->
-  <header class="site-header">
-  <div class="header-inside">
-    <div class="logo">
-      <a href="/blog/" rel="home">
-        
-        <img src="https://hexo.io/logo.svg" alt="落后就要挨打" height="60">
-        
-      </a>
-    </div>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse">
-        <ul class="navbar-nav">
-          
-          
-            <li>
-              <a href="/blog/.">
-                
-                  home
-                
-              </a>
-            </li>
-          
-            <li>
-              <a href="/blog/archives">
-                
-                  archive
-                
-              </a>
-            </li>
-          
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </nav>
-    <div class="button-wrap">
-      <button class="menu-toggle">Primary Menu</button>
-    </div>
-  </div>
-</header>
-
-
-  <!-- Main Content -->
-  <div class="content-area">
-  <div class="post">
-    <!-- Post Content -->
-    <div class="container">
-      <article>
-        <!-- Title date & tags -->
-        <div class="post-header">
-          <h1 class="entry-title">
-            个人微博的诞生
-            
-          </h1>
-          <p class="posted-on">
-          2019-03-10
-          </p>
-          <div class="tags-links">
-            
-              
-            
-          </div>
-        </div>
-        <!-- Post Main Content -->
-        <div class="entry-content has_line_number">
-          <p>  今天弄了好几个小时的hexo+github的个人博客，本来思路是很清楚的，就是首先配置需要的环境例如node.js，git….等等，然后再把他们按照规定的方式衔接起来。<br>比如hexo与github的衔接，就是靠ssh的密匙。心里想着按着这个思路弄很快就能出成果。可谁知道还是踩了不少坑。<br>  首先是hexo的安装配置流程不熟悉，相关命令后面的参数不清楚，导致浪费了很多时间。其次是在配置hexo的_config.yml文件上也吃了一些亏，总的来说是自己不细心，<br>更是因为首先心理预期很轻松，但是实际操作不顺畅，导致越急越错，越错越急。<br>  github的配置倒是很顺利。<br>  总的来说，这个博客网站还是搭建起来了。<br>  记录一下，纯粹的抒发一下心中的愤懑。<br>  不过还是比较有成就感，算是在互联网大潮中有了自己的一块小地方。  </p>
-
-        </div>
-      </article>
-    </div>
-    <!-- Comments -->
-    <div class="container">
-      
-<section id="comment">
-  <!-- <h1 class="title">Comments</h1> -->
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
   
-</section>
+  
+    
+  
 
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
 
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">落后就要挨打</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <!-- Pre or Next -->
-    <div class="nav-links">
       
+        <p class="site-subtitle"></p>
       
-    </div>
+  </div>
 
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
 </div>
 
+<nav class="site-nav">
+  
 
-  <!-- Footer -->
-  <!-- Footer-widgets -->
-<div class="footer-widgets">
-  <div class="row inside-wrapper">
-    <div class="col-1-3">
-      <aside>
-        <h1 class="widget-title">关于本站</h1>
-        <div class="custom-widget-content">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/ukeepit/blog.git/blog/2019/03/10/个人微博的诞生/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="X">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="落后就要挨打">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">个人微博的诞生</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-10T22:07:09+08:00">
+                2019-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <ul><li><a href="https://github.com/GallenHu/hexo-theme-Daily/wiki">如何自定义这里的内容(配置教程)?</a></li></ul>
-        </div>
-      </aside>
-    </div>
-    <div class="col-1-3">
-      <aside>
-        <h1 class="widget-title">Contact</h1>
-        <div class="widget-text">
+
           
             
-              <a href="https://github.com/GallenHu" class="icon icon-github" target="_blank">github</a>
-            
           
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-      </aside>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>  今天弄了好几个小时的hexo+github的个人博客，本来思路是很清楚的，就是首先配置需要的环境例如node.js，git….等等，然后再把他们按照规定的方式衔接起来。<br>比如hexo与github的衔接，就是靠ssh的密匙。心里想着按着这个思路弄很快就能出成果。可谁知道还是踩了不少坑。<br>  首先是hexo的安装配置流程不熟悉，相关命令后面的参数不清楚，导致浪费了很多时间。其次是在配置hexo的_config.yml文件上也吃了一些亏，总的来说是自己不细心，<br>更是因为首先心理预期很轻松，但是实际操作不顺畅，导致越急越错，越错越急。<br>  github的配置倒是很顺利。<br>  总的来说，这个博客网站还是搭建起来了。<br>  记录一下，纯粹的抒发一下心中的愤懑。<br>  不过还是比较有成就感，算是在互联网大潮中有了自己的一块小地方。  </p>
+
+      
     </div>
-    <div class="col-1-3">
-      <aside>
-        <h1 class="widget-title">Search</h1>
-        <div class="widget-text">
-          <form onsubmit="return appDaily.submitSearch('')">
-            <p>
-              <input type="text" placeholder="search..." id="homeSearchInput">
-            </p>
-            <!-- <input type="submit" value="GO"> -->
-          </form>
-        </div>
-      </aside>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
   </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">X</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">X</span>
+
+  
 </div>
-<!-- Footer -->
-<footer class="site-info">
-  <p>
-    <span>落后就要挨打 &copy; 2019</span>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
-      <span class="split">|</span>
-      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
-  </p>
-</footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-  <!-- After footer scripts -->
-  <!-- scripts -->
-<script src="/blog/js/app.js"></script>
 
 
 
 
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
-
 </html>
