@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="记录解决问题的思路">
 <meta property="og:description" content="传统的javaEE的web项目用的是ssm框架，用这种框架布置的微服务架构使用方便，管理也是一目了然。解耦性也很高，解决了javeEE项目开发的效率问题，让程序员能在短时间内搭建起一个web项目。但是随着使用ssm框架熟练的增加，程序员对框架内部配置繁多的xml文件感到烦不胜烦。首先，因为是一个web项目，所以有一个web.xml文件，这里面配置的是过滤器，servlet，监听器，和初始化加载文件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-13T06:47:40.876Z">
+<meta property="og:updated_time" content="2019-03-13T06:51:01.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为什么要用SpringBoot?">
 <meta name="twitter:description" content="传统的javaEE的web项目用的是ssm框架，用这种框架布置的微服务架构使用方便，管理也是一目了然。解耦性也很高，解决了javeEE项目开发的效率问题，让程序员能在短时间内搭建起一个web项目。但是随着使用ssm框架熟练的增加，程序员对框架内部配置繁多的xml文件感到烦不胜烦。首先，因为是一个web项目，所以有一个web.xml文件，这里面配置的是过滤器，servlet，监听器，和初始化加载文件">
@@ -336,7 +336,7 @@
       
 
       
-        <p>传统的javaEE的web项目用的是ssm框架，用这种框架布置的微服务架构使用方便，管理也是一目了然。解耦性也很高，解决了javeEE项目开发的效率问题，<br>让程序员能在短时间内搭建起一个web项目。<br>但是随着使用ssm框架熟练的增加，程序员对框架内部配置繁多的xml文件感到烦不胜烦。<br>首先，因为是一个web项目，所以有一个web.xml文件，这里面配置的是过滤器，servlet，监听器，和初始化加载文件等等….而这还只是web.xml<br>的最基本配置，如果你想拥有其他服务，代码量还得往上加。<br>其次，ssm框架的每一个环节，都有需要配置文件。首先来看看ssm的第一个s:spring。它的作用是ioc和aop，因此在项目中用到的所有的bean你都需要交给<br>它托管，这样一来，第一个‘s’就会产生很多个xml文件;第二个s:springmvc，它的作用的拦截用户请求。其实质上就是一个servlet，只不过<br>它的工作流程由三个类（dispachservlet、handlemapping、modleandview）来结合完成。因此也会有一个属于它的xml文件。该文件配置的是<br>springmvc对于用户请求的拦截规则和其他功能等等…；第三个m:mybatis，作为持久层的一个框架，也需要有一个xml文件。不过因为mybatis<br>提供的逆向工程的功能，该xml文件的内容手写方面很少。<br>听起来光是搭个架子工作量就非常大是不是？真的实践起来也是如此麻烦，往往架子搭建完成，已经没有脑细胞去实现业务的编码了。而且每次<br>往项目里面增加功能，引入新的jar包，都需要再创建新的xml文件，虽然这样做便于管理，但这xml已经占满了你的大脑。:)<br>为此，springboot横空出世。它的理念就是完全不需要xml文件，用java自带的注释来取代这一切xml文件的配置。而且springboot还是一个全家桶，<br>它里面装了javaEE开发需要的一系列jar包和插件，比如tomcat，jpa，mysql等等等等..意味着如果使用springboot来开发javaEE项目，搭架子<br>不再是一个麻烦的事情，这就为程序员腾出了时间和精力用来更好的完善业务。<br>当然，刚用它还是挺不方便的，因为注释太多而且以前大多都没有接触过，因此需要时间来熟悉。</p>
+        <p>传统的javaEE的web项目用的是ssm框架，用这种框架布置的微服务架构使用方便，管理也是一目了然。解耦性也很高，解决了javeEE项目开发的效率问题，<br>让程序员能在短时间内搭建起一个web项目。<br>但是随着使用ssm框架熟练的增加，程序员对框架内部配置繁多的xml文件感到烦不胜烦。<br>首先，因为是一个web项目，所以有一个web.xml文件，这里面配置的是过滤器，servlet，监听器，和初始化加载文件等等….而这还只是web.xml<br>的最基本配置，如果你想拥有其他服务，代码量还得往上加。<br><a id="more"></a><br>其次，ssm框架的每一个环节，都有需要配置文件。首先来看看ssm的第一个s:spring。它的作用是ioc和aop，因此在项目中用到的所有的bean你都需要交给<br>它托管，这样一来，第一个‘s’就会产生很多个xml文件;第二个s:springmvc，它的作用的拦截用户请求。其实质上就是一个servlet，只不过<br>它的工作流程由三个类（dispachservlet、handlemapping、modleandview）来结合完成。因此也会有一个属于它的xml文件。该文件配置的是<br>springmvc对于用户请求的拦截规则和其他功能等等…；第三个m:mybatis，作为持久层的一个框架，也需要有一个xml文件。不过因为mybatis<br>提供的逆向工程的功能，该xml文件的内容手写方面很少。<br>听起来光是搭个架子工作量就非常大是不是？真的实践起来也是如此麻烦，往往架子搭建完成，已经没有脑细胞去实现业务的编码了。而且每次<br>往项目里面增加功能，引入新的jar包，都需要再创建新的xml文件，虽然这样做便于管理，但这xml已经占满了你的大脑。:)<br>为此，springboot横空出世。它的理念就是完全不需要xml文件，用java自带的注释来取代这一切xml文件的配置。而且springboot还是一个全家桶，<br>它里面装了javaEE开发需要的一系列jar包和插件，比如tomcat，jpa，mysql等等等等..意味着如果使用springboot来开发javaEE项目，搭架子<br>不再是一个麻烦的事情，这就为程序员腾出了时间和精力用来更好的完善业务。<br>当然，刚用它还是挺不方便的，因为注释太多而且以前大多都没有接触过，因此需要时间来熟悉。</p>
 
       
     </div>
